@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import ICalculatorDisplay from '../../interfaces/ICalculatorDisplay';
 
-function CalculatorDisplay(props: ICalculatorDisplay) {
+function Display(props: ICalculatorDisplay): ReactElement {
   const { equation, currentValue } = props;
   return (
     <div className="calculator__display">
@@ -12,4 +12,4 @@ function CalculatorDisplay(props: ICalculatorDisplay) {
   );
 }
 
-export default CalculatorDisplay;
+export default Display;
