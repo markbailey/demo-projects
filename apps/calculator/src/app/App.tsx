@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 
 import {
   OperatorButton,
   NumPadButton,
   EqualsButton,
 } from '../components/button';
-import CalculatorDisplay from '../components/calculator-display';
+import Calculator from '../components/calculator';
+import Display from '../components/display';
+import Keypad from '../components/keypad';
 import calculate, { OPERATORS } from '../utils/calculate';
 
-function App() {
+function App(): ReactElement {
   const [equation, setEquation] = useState('');
   const [lastOperator, setLastOperator] = useState('');
   const [total, setTotal] = useState(0);
@@ -37,7 +39,7 @@ function App() {
 
       setEquation(newEquation);
       setLastOperator(key);
-      setTotal(0);
+      if (total > 0) setTotal(0);
     }
   }
 
@@ -55,9 +57,9 @@ function App() {
   };
 
   return (
-    <div className="calculator">
-      <CalculatorDisplay equation={equation} currentValue={currentValue} />
-      <div className="calculator__keys">
+    <Calculator>
+      <Display equation={equation} currentValue={currentValue} />
+      <Keypad>
         <OperatorButton type="plus" onClick={() => onOperatorButtonClick(OPERATORS.plus)} />
         <OperatorButton type="minus" onClick={() => onOperatorButtonClick(OPERATORS.minus)} />
         <OperatorButton type="multiple" onClick={() => onOperatorButtonClick(OPERATORS.multiple)} />
@@ -77,8 +79,8 @@ function App() {
         <NumPadButton value="C" onClick={clear} />
 
         <EqualsButton onClick={equals} />
-      </div>
-    </div>
+      </Keypad>
+    </Calculator>
   );
 }
 
