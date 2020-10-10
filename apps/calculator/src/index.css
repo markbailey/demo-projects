@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-size: 16px;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/** CALCULATOR CLASSES */
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+}
+
+.calculator__display {
+  display: flex;
+  flex-direction: column;
+  background-color: #222;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  text-align: right;
+}
+
+.calculator__display .total {
+  font-size: 1.75rem;
+}
+
+.calculator__display .equation {
+  color: #ddd;
+}
+
+.calculator__keys {
+  display: grid;
+  gap: 2px;
+  grid-template-areas:
+    ". . . ."
+    "seven eight nine equals"
+    "four five six equals"
+    "one two three equals"
+    "zero decimal clear equals";
+
+  background-color: #ccc;
+}
+
+.calculator__keys button {
+  border: 0;
+  padding: 1rem;
+  font-size: 1.25rem;
+  /* font-weight: 600; */
+}
+
+.calculator__keys .operator {
+  background-color: #ddd;
+}
+
+.calculator__keys .numpad {
+  background-color: #fff;
+}
+
+.equals {
+  grid-area: equals;
+  background-color: orangered;
+}
+
+/** NUMPAD KEYS */
+.clear {
+  grid-area: clear;
+}
+
+.decimal {
+  grid-area: decimal;
+}
+
+.zero {
+  grid-area: zero;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+@media (max-width: 767px) {
+
+  .calculator,
+  .calculator__display {
+    flex: 1;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .calculator {
+    display: block;
+    width: 90%;
+    max-width: 325px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 4px solid #ccc;
+  }
+}
