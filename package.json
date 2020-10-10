@@ -1,0 +1,10 @@
+{
+  "name": "demo-projects",
+  "private": true,
+  "scripts": {
+    "calculator": "lerna run --scope=calculator start"
+  },
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}
