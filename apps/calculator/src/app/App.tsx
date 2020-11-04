@@ -47,7 +47,7 @@ function App(): ReactElement {
     const newValue = lastOperator !== '' || (currentValue === '0' && key !== '.');
     const newCurrentValue = newValue ? `${key === '.' ? 0 : ''}${key.toString()}`  : `${currentValue}${key}`
 
-    setCurrentValue(newCurrentValue);
+    setCurrentValue(parseFloat(newCurrentValue).toString());
     setLastOperator('');
 
     if (newValue && total > 0) {

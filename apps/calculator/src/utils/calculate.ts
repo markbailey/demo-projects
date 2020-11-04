@@ -21,21 +21,22 @@ export default function (equation: string): number {
   let c = 0;
 
   return segments.reduce((total, current, i) => {
+    c++;
+
     switch (current) {
       case OPERATORS.plus:
       case OPERATORS.minus:
       case OPERATORS.multiple:
       case OPERATORS.divide:
         const fn = Object.keys(calculation).find(key => OPERATORS[key] === current);
+
         if (fn) {
-          c++;
           const sum = calculation[fn];
           return sum(total, parseFloat(segments[c]));
         }
 
         return total;
       default:
-        c++;
         return i === 0 ? parseFloat(current) : total;
     }
   }, 0);
