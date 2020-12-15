@@ -1,6 +1,4 @@
-interface ICalculatorDisplay {
+export default interface ICalculatorDisplay {
   equation: string;
   currentValue: string;
 }
-
-export default ICalculatorDisplay;

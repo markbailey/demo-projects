@@ -1,13 +1,12 @@
 import IObjectKeys from './IObjectKeys';
 
-interface IOperatorButton {
-  type: string;
-  onClick: (t: string) => void;
-}
-
 export interface IAltOperatorValues extends IObjectKeys {
   multiple: string;
   divide: string;
 }
 
-export default IOperatorButton;
+export default interface IOperatorButton {
+  type: string;
+  value: string;
+  onClick: (t: string) => void;
+}

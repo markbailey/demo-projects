@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 import ICalculatorDisplay from '../../interfaces/ICalculatorDisplay';
 
-function Display(props: ICalculatorDisplay): ReactElement {
+export default function Display(props: ICalculatorDisplay): ReactElement {
   const { equation, currentValue } = props;
   return (
     <div className="calculator__display">
@@ -11,5 +11,3 @@ function Display(props: ICalculatorDisplay): ReactElement {
     </div>
   );
 }
-
-export default Display;

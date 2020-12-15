@@ -1,7 +1,5 @@
 import { ReactElement } from "react";
 
-interface ICalculator {
+export default interface ICalculator {
   children: ReactElement[];
 }
-
-export default ICalculator;

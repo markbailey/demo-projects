@@ -1,5 +1,3 @@
-interface IObjectKeys {
+export default interface IObjectKeys {
   [key: string]: any;
 }
-
-export default IObjectKeys;
