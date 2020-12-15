@@ -7,5 +7,5 @@ export default function Calculator(props: ICalculator): ReactElement {
     <div className="calculator">
       {props.children}
     </div>
-  )
+  );
 }

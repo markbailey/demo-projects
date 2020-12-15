@@ -7,5 +7,5 @@ export default function Keypad(props:ICalculatorKeypad): ReactElement {
     <div className="calculator__keys">
       {props.children}
     </div>
-  )
+  );
 }
