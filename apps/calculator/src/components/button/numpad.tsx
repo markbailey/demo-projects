@@ -18,14 +18,12 @@ const NUMPAD_CLASSES: INumPadClasses = {
   C: 'clear',
 };
 
-function NumPadButton(props: INumPadButton): ReactElement {
+export default function NumPadButton(props: INumPadButton): ReactElement {
   const { value, onClick } = props;
-  const valueClass = NUMPAD_CLASSES[value];
+  const valueClass: string = NUMPAD_CLASSES[value];
   return (
-    <Button className={`numpad ${valueClass}`} onClick={() => onClick(value)}>
+    <Button className={`numpad ${valueClass}`} onClick={() => onClick(value.toString())}>
       {value}
     </Button>
   );
 }
-
-export default NumPadButton;

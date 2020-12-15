@@ -2,7 +2,7 @@ import IObjectKeys from './IObjectKeys';
 
 interface INumPadButton {
   value: string | number;
-  onClick: (v: string | number) => void;
+  onClick: (v: string) => void;
 }
 
 export interface INumPadClasses extends IObjectKeys {

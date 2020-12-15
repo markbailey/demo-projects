@@ -17,8 +17,8 @@ const calculation: ICalculation = {
 }
 
 export default function (equation: string): number {
-  const segments = equation.split(' ');
-  let c = 0;
+  const segments: string[] = equation.split(' ');
+  let c: number = 0;
 
   return segments.reduce((total, current, i) => {
     c++;

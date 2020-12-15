@@ -6,9 +6,9 @@ interface iEqualsButton {
   onClick: () => void;
 }
 
-export function EqualsButton(props: iEqualsButton): ReactElement {
+export default function EqualsButton(props: iEqualsButton): ReactElement {
   const { onClick } = props;
-  const text = '=';
+  const text: string = '=';
 
   return (
     <Button className="equals" onClick={onClick}>
@@ -16,5 +16,3 @@ export function EqualsButton(props: iEqualsButton): ReactElement {
     </Button>
   );
 }
-
-export default EqualsButton;
